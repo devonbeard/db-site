@@ -1,3 +1,3 @@
-Devon Beard's Personal Site
+DB Personal Site
 ===========================
 

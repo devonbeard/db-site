@@ -38,7 +38,7 @@ body{
 .hero{
   @extend .text-center;
   @extend .is-uppercase;
-  background: url(../img/hero-bg.jpg) no-repeat 0 0 fixed;
+  background: url(../img/hero-bg-alt.jpg) no-repeat 0 0 fixed;
   color: rgba(255,255,255, .85);
   letter-spacing: 1px;
   min-height: 645px;
@@ -72,89 +72,106 @@ body{
   width: 60%;
 }
 
-.introduction__description{
-  color: lighten($secondary-color, 20%);
+
+.about-container{
+  background: #232323;
 }
+.about{
+  color: #fff;
+  margin: 0 auto;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  padding: 9% 0;
+  text-align: center;
+  width: 70%;
+
+  h3{
+    color: #fff;
+  }
+
+  p{
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    -ms-column-gap: 40px;
+    -o-column-gap: 40px;
+    column-gap: 40px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+  }
+}
+
 
 
 
 .portfolio{
   @extend .clearfix;
-  padding: 7% 0;
+  padding-top: 7%;
+
+  a{
+    display: block;
+    float: left;
+    padding: 2% 4% 4%;
+    text-decoration: none;
+    text-align: center;
+    width: 50%;
+    @include transition(background);
+
+    &:nth-of-type(1) {
+      background: #f2783c;
+    }
+    &:nth-of-type(2) {
+      background: #76aadb;
+    }
+    &:nth-of-type(3) {
+      background: #0196d8;
+    }
+    &:nth-of-type(4) {
+      background: #b11623;
+    }
+    &:nth-of-type(5) {
+      background: #372f4a;
+    }
+    &:nth-of-type(6) {
+      background: #6b3274;
+    }
+
+
+    &:hover {
+      &:nth-of-type(1) {
+        background:  darken(#f2783c, 5%);
+      }
+      &:nth-of-type(2) {
+        background:  darken(#76aadb, 5%);
+      }
+      &:nth-of-type(3) {
+        background:  darken(#0196d8, 5%);
+      }
+      &:nth-of-type(4) {
+        background: darken(#b11623, 5%);
+      }
+      &:nth-of-type(5) {
+        background: darken(#372f4a, 5%);
+      }
+      &:nth-of-type(6) {
+        background: darken(#6b3274, 5%);
+      }
+    }
+  }
 
   h4{
     color: #fff;
     margin-bottom: 6%;
   }
 
-  .portfolio-piece{
-
-    float: left;
-    width: 50%;
-    text-align: center;
-    padding: 2% 4% 4%;
-
-    &:nth-of-type(1) {
-      @include gradient(#f2783c, darken(#f2783c, 5%));
-    }
-    &:nth-of-type(2) {
-      @include gradient(#76aadb, darken(#76aadb, 5%));
-    }
-    &:nth-of-type(3) {
-      @include gradient(#0196d8, darken(#0196d8, 5%));
-    }
-    &:nth-of-type(4) {
-      @include gradient(#372f4a, darken(#372f4a, 5%));
-    }
-    &:nth-of-type(5) {
-      @include gradient(#b11623, darken(#b11623, 5%));
-    }
-    &:nth-of-type(6) {
-      background: #76aadb;
-    }
-  }
-
-  .portfolio-item{
-    background: url(../img/portfolio.png)  0 0 no-repeat;
-    margin: 0 auto;
-    max-width: 700px;
-    height: 520px;
-    // background-size: 100%;
-  }
-
-  .omada{
-    @extend .portfolio-item;
-    background-position: 0 -1217px;
-  }
-
-  .prevent{
-    @extend .portfolio-item;
-    background-position: 0 -608px;
-  }
-
-  .bdg{
-    @extend .portfolio-item;
-    background-position: 0 -1825px;
-  }
-
-  .rockbridge{
-    @extend .portfolio-item;
-    background-position: 0 -2434px;
-  }
-
-  .nextgen{
-    @extend .portfolio-item;
-    background-position: 0 1px;
-  }
-
-  .saab{
-    @extend .portfolio-item;
-    background-position: 0 -3039px;
-  }
 }
 
 .browser{
+  width: 100%;
   position: relative;
+
   &:before{
     background: #e8e8e8;
     border-bottom: 1px solid #dbd8d7;
@@ -162,6 +179,13 @@ body{
     content: '';
     display: block;
     height: 34px;
+    width: 100%;
+  }
+
+  img{
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,.15);
+    border-radius: 0 0 5px 5px;
+    height: auto;
     width: 100%;
   }
 
@@ -211,3 +235,5 @@ footer{
     }
   }
 }
+
+@import "lib/media_queries";

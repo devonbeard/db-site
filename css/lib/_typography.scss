@@ -54,29 +54,6 @@ h6 {
 }
 
 
-p, pre {
-
-  line-height: font-size(26px);
-}
-
-label{
-  font-size: 13px;
-}
-
-ol, ul, dl{
-
-}
-
-
-li {
-
-}
-
-a{
-  color: blue;
-  @include transition(color);
-}
-
 hr{
   background: rgba(255,255,255, .5);
   border: 0;

@@ -1,0 +1,75 @@
+@media screen and (max-width: 900px) {
+
+
+  .hero{
+    min-height: 435px;
+
+    h1{
+      font-size: 2rem;
+    }
+    h2{
+      font-size: 1rem;
+    }
+
+    hr{
+      width: 60%;
+    }
+  }
+
+  .introduction{
+    width: 90%;
+  }
+
+  .portfolio{
+
+    a{
+      float: none;
+      padding: 2% 6% 6%;
+      width: 100%;
+    }
+
+  }
+
+  .about{
+
+    p{
+      -webkit-column-gap: 40px;
+      -moz-column-gap: 40px;
+      -ms-column-gap: 40px;
+      -o-column-gap: 40px;
+      column-gap: 40px;
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      -ms-column-count: 1;
+      -o-column-count: 1;
+      column-count: 1;
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+  .introduction, .about{
+    width: 90%;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  footer{
+    text-align: center;
+    padding: 5% 0;
+
+    a{
+      display: block;
+      margin-bottom: 25px;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+}
