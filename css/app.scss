@@ -1,0 +1,213 @@
+@import "lib/reset";
+@import "lib/settings";
+@import "lib/mixins";
+@import "lib/utilities";
+@import "lib/grid";
+@import "lib/typography";
+
+$border-width: 25px;
+
+body{
+  color: #333;
+  font-size: $base-font-size;
+  font-family: 'Raleway', sans-serif;
+  border-left: $border-width solid #fff;
+  border-right: $border-width solid #fff;
+  position: relative;
+
+  &:before{
+    background: #fff;
+    content: '';
+    position: fixed;
+    height: $border-width;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+%centered{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+
+.hero{
+  @extend .text-center;
+  @extend .is-uppercase;
+  background: url(../img/hero-bg.jpg) no-repeat 0 0 fixed;
+  color: rgba(255,255,255, .85);
+  letter-spacing: 1px;
+  min-height: 645px;
+  position: relative;
+
+  .centered{
+    @extend %centered;
+    height: 35%;
+  }
+
+  h1, h2{
+    color: #fff;
+    letter-spacing: .15em;
+  }
+
+  hr{
+    margin: em-font(15px) auto em-font(30px);
+    max-width: 645px;
+  }
+}
+
+.introduction-container{
+  background: #eee;
+}
+.introduction{
+  margin: 0 auto;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  padding: 9% 0;
+  text-align: center;
+  width: 60%;
+}
+
+.introduction__description{
+  color: lighten($secondary-color, 20%);
+}
+
+
+
+.portfolio{
+  @extend .clearfix;
+  padding: 7% 0;
+
+  h4{
+    color: #fff;
+    margin-bottom: 6%;
+  }
+
+  .portfolio-piece{
+
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 2% 4% 4%;
+
+    &:nth-of-type(1) {
+      @include gradient(#f2783c, darken(#f2783c, 5%));
+    }
+    &:nth-of-type(2) {
+      @include gradient(#76aadb, darken(#76aadb, 5%));
+    }
+    &:nth-of-type(3) {
+      @include gradient(#0196d8, darken(#0196d8, 5%));
+    }
+    &:nth-of-type(4) {
+      @include gradient(#372f4a, darken(#372f4a, 5%));
+    }
+    &:nth-of-type(5) {
+      @include gradient(#b11623, darken(#b11623, 5%));
+    }
+    &:nth-of-type(6) {
+      background: #76aadb;
+    }
+  }
+
+  .portfolio-item{
+    background: url(../img/portfolio.png)  0 0 no-repeat;
+    margin: 0 auto;
+    max-width: 700px;
+    height: 520px;
+    // background-size: 100%;
+  }
+
+  .omada{
+    @extend .portfolio-item;
+    background-position: 0 -1217px;
+  }
+
+  .prevent{
+    @extend .portfolio-item;
+    background-position: 0 -608px;
+  }
+
+  .bdg{
+    @extend .portfolio-item;
+    background-position: 0 -1825px;
+  }
+
+  .rockbridge{
+    @extend .portfolio-item;
+    background-position: 0 -2434px;
+  }
+
+  .nextgen{
+    @extend .portfolio-item;
+    background-position: 0 1px;
+  }
+
+  .saab{
+    @extend .portfolio-item;
+    background-position: 0 -3039px;
+  }
+}
+
+.browser{
+  position: relative;
+  &:before{
+    background: #e8e8e8;
+    border-bottom: 1px solid #dbd8d7;
+    border-radius: 5px 5px 0 0;
+    content: '';
+    display: block;
+    height: 34px;
+    width: 100%;
+  }
+
+  .browser-buttons{
+    background: #b3b3b3;
+    border-radius: 50%;
+    height: 7px;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 7px;
+
+    &:after, &:before{
+      background: #b3b3b3;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 7px;
+      width: 7px;
+      position: absolute;
+      left: -15px;
+      top: 0px;
+    }
+
+    &:after{
+      background: #b3b3b3;
+      left: 15px;
+    }
+  }
+}
+
+
+footer{
+  padding: 1% 0;
+  text-align: center;
+
+  a{
+    color: lighten($secondary-color, 20%);
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    @include transition();
+
+    &:hover{
+      color: darken($secondary-color, 20%);
+    }
+  }
+}

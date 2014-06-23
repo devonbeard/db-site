@@ -1,0 +1,81 @@
+// Utilities
+
+.left, %left{
+  float: left;
+}
+
+.right, %right{
+  float: right;
+}
+
+
+.inline-block{
+  display: inline-block;
+}
+
+.block{
+  display: block;
+}
+
+
+// States
+.is-uppercase{
+  text-transform: uppercase;
+}
+
+.is-lowercase{
+  text-transform: lowercase;
+}
+
+
+// Text Alignment
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+
+// Animations
+/*
+==============================================
+fadeIn
+==============================================
+*/
+
+.fadeIn{
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+
+  visibility: visible !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

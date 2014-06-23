@@ -1,0 +1,30 @@
+// SET UP YOUR VARIABLES IN THIS FILE
+$secondary-color: #333333;
+$white: #fff;
+
+
+
+// Fonts, measure, leading and typefaces
+// ------------------------------------------------------------
+
+// Fonts size and line height defaults for our calculations
+$base-font-size             : 16px;         // Sets the browser default size. Shouldn't need to change this.
+$base-line-height           : 8px;          // Baseline grid. Set to a sensible, small size.
+
+
+
+
+// Functions for px to em conversions
+// ------------------------------------------------------------
+
+@function emify($target, $context) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+// Make px to ems using base-font-size
+// echo as: font-size: em-font(#px);
+
+@function em-font($target, $context: $base-font-size) {
+   @return emify($target, $context);
+}
