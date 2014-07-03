@@ -14,16 +14,43 @@ body{
   border-left: $border-width solid #fff;
   border-right: $border-width solid #fff;
   position: relative;
+}
 
-  &:before{
-    background: #fff;
-    content: '';
-    position: fixed;
-    height: $border-width;
-    width: 100%;
-    z-index: 1;
+header {
+  @extend .clearfix;
+  backround: #fff;
+  min-height: $border-width * 2.5;
+
+  a {
+    @include transition(color);
+    color: $secondary-color;
+    font-size: .95rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 65px;
+
+    &:hover {
+      @extend .blue;
+    }
   }
 }
+
+.logo {
+  float: left;
+}
+
+nav {
+  float: right;
+
+  a {
+    margin-right: 1.5rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
 
 %centered{
   position: absolute;
@@ -41,12 +68,12 @@ body{
   background: url(../img/hero-bg-alt.jpg) no-repeat 0 0 fixed;
   color: rgba(255,255,255, .85);
   letter-spacing: 1px;
-  min-height: 645px;
+  min-height: 475px;
   position: relative;
 
   .centered{
     @extend %centered;
-    height: 35%;
+    height: 40%;
   }
 
   h1, h2{
@@ -116,8 +143,14 @@ body{
     padding: 2% 4% 4%;
     text-decoration: none;
     text-align: center;
-    width: 50%;
+    width: 48.5%;
     @include transition(background);
+
+    &:nth-of-type(2n + 1) {
+      clear: both;
+      margin-right: 2.5%;
+      margin-bottom: 2%;
+    }
 
     &:nth-of-type(1) {
       background: #f2783c;
@@ -138,27 +171,6 @@ body{
       background: #6b3274;
     }
 
-
-    &:hover {
-      &:nth-of-type(1) {
-        background:  darken(#f2783c, 5%);
-      }
-      &:nth-of-type(2) {
-        background:  darken(#76aadb, 5%);
-      }
-      &:nth-of-type(3) {
-        background:  darken(#0196d8, 5%);
-      }
-      &:nth-of-type(4) {
-        background: darken(#b11623, 5%);
-      }
-      &:nth-of-type(5) {
-        background: darken(#372f4a, 5%);
-      }
-      &:nth-of-type(6) {
-        background: darken(#6b3274, 5%);
-      }
-    }
   }
 
   h4{
@@ -231,7 +243,7 @@ footer{
     @include transition();
 
     &:hover{
-      color: darken($secondary-color, 20%);
+      @extend .blue;
     }
   }
 }
